@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>伪随机条纹背景</title>
+		<style>
+			main {
+				width: 100vw;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+			}
+			div {
+				width: 750px;
+				height: 100px;
+			}
+			p {
+				margin: 30px 0;
+			}
+			.normal {
+				background: linear-gradient(
+					90deg,
+					#fb3 15%,
+					#655 0,
+					#655 40%,
+					#ab4 0,
+					#ab4 65%,
+					hsla(20, 40%, 90%) 0
+				);
+				background-size: 80px 100%;
+			}
+			.split-multi {
+				background: hsla(20, 40%, 90%);
+				background-image: linear-gradient(90deg, #fb3 10px, transparent 0),
+					linear-gradient(90deg, #655 20px, transparent 0),
+					linear-gradient(90deg, #ab4 30px, transparent 0);
+				background-size: 80px 100%, 60px 100%, 40px 100%;
+			}
+      .cicada-stripes {
+				background: hsla(20, 40%, 90%);
+				background-image: linear-gradient(90deg, #fb3 11px, transparent 0),
+					linear-gradient(90deg, #655 23px, transparent 0),
+					linear-gradient(90deg, #ab4 41px, transparent 0);
+				background-size: 41px 100%, 61px 100%, 79px 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<main>
+			<div class="normal"></div>
+			<p>普通重复</p>
+			<div class="split-multi"></div>
+			<p>拆分为多个图层，一种颜色作为底色，另三种颜色作为条纹,将平铺最大的放在最顶层。这样在一定间距内是伪随机的，但在所有background-size的最小公倍数宽度后依然会重复</p>
+      <div class="cicada-stripes"></div>
+			<p>将每个平铺贴片的尺寸设为质数，使最小公倍数最大化，这就是“蝉原则”</p>
+		</main>
+	</body>
+</html>

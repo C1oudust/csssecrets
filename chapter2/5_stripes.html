@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>条纹背景</title>
+		<style>
+			main {
+				width: 100vw;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+			}
+			div {
+				width: 150px;
+				height: 100px;
+			}
+			p {
+				margin: 30px 0;
+			}
+			.stripe1 {
+				background: linear-gradient(#fb3 50%, #58a 50%);
+			}
+			.stripe2 {
+				background: linear-gradient(#fb3 50%, #58a 50%);
+				background-size: 100% 30px;
+				/* background-repeat: no-repeat; */
+			}
+			.stripe3 {
+				background: linear-gradient(#fb3 50%, #58a 0);
+				background-size: 100% 30px;
+			}
+			.stripe4 {
+				background: linear-gradient(
+					#fb3 33.3%,
+					#58a 0,
+					#58a 66.6%,
+					yellowgreen 0
+				);
+				background-size: 100% 50px;
+			}
+			.stripe5 {
+				background: linear-gradient(90deg, #fb3 50%, #58a 0);
+				background-size: 30px 100%;
+			}
+			.diagonal {
+				background: linear-gradient(
+					45deg,
+					#fb3 25%,
+					#58a 0,
+					#58a 50%,
+					#fb3 0,
+					#fb3 75%,
+					#58a 0
+				);
+				background-size: 40px 40px;
+				/* background-repeat: no-repeat; */
+			}
+			.diagonal2 {
+				background: repeating-linear-gradient(
+					60deg,
+					#fb3 0,
+					#fb3 25px,
+					#58a 0,
+					#58a 50px,
+					#fb3 0,
+					#fb3 75px,
+					#58a 0,
+					#58a 100px
+				);
+			}
+			.subtle {
+				background: #58a;
+				background-image: repeating-linear-gradient(
+					30deg,
+					hsla(0, 0%, 100%, 0.1) 0,
+					hsla(0, 0%, 100%, 0.1) 20px,
+					transparent 0,
+					transparent 40px
+				);
+			}
+		</style>
+	</head>
+
+	<body>
+		<main>
+			<div class="stripe1"></div>
+			<p>
+				如果色标具有相同的位置，会产生一个无限小的过渡区域，视觉上看就好像颜色突然变化一样
+			</p>
+			<div class="stripe2"></div>
+			<p>可以通过background-size调整尺寸,背景默认平铺，所以会重复</p>
+			<div class="stripe3"></div>
+			<p>
+				如果一个色标的位置值比整个列表中在它之前的色标位置都要小，则该色标的位置会被设置为它前面所有色标位置的最大值
+			</p>
+			<div class="stripe4"></div>
+			<p>三种颜色的水平条纹</p>
+			<div class="stripe5"></div>
+			<p>垂直条纹</p>
+			<div class="diagonal"></div>
+			<p>
+				斜向条纹，需要单个贴片里包含四条条纹，才可以做到无缝拼接,缺点是只能创建+-45度的条纹
+			</p>
+			<div class="diagonal2"></div>
+			<p>更好的斜向条纹,但创建双色条纹时需要四个色标</p>
+			<div class="subtle"></div>
+			<p>灵活的同色系条纹，只需要修改一个位置,就可以改变所变颜色</p>
+		</main>
+	</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>复杂的背景图案</title>
+		<style>
+			main {
+				width: 100vw;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+			}
+			div {
+				width: 150px;
+				height: 100px;
+			}
+			p {
+				margin: 30px 0;
+			}
+			.grid {
+				background: white;
+				background-image: linear-gradient(
+						90deg,
+						rgba(200, 0, 0, 0.5) 50%,
+						transparent 0
+					),
+					linear-gradient(rgba(200, 0, 0, 0.5) 50%, transparent 0);
+				background-size: 25px 25px;
+			}
+			.grid2 {
+				background: #58a;
+				background-image: linear-gradient(90deg, white 1px, transparent 0),
+					linear-gradient(white 1px, transparent 0);
+				background-size: 30px 30px;
+			}
+			.blueprint {
+				background: #58a;
+				background-image: linear-gradient(white 2px, transparent 0),
+					linear-gradient(90deg, white 2px, transparent 0),
+					linear-gradient(hsla(0, 0%, 100%, 0.3) 1px, transparent 0),
+					linear-gradient(90deg, hsla(0, 0%, 100%, 0.3) 1px, transparent 0);
+				background-size: 75px 75px, 75px 75px, 15px 15px, 15px 15px;
+			}
+			.polka {
+				background: #655;
+				background-image: radial-gradient(tan 30%, transparent 0);
+				background-size: 30px 30px;
+			}
+			.polka2 {
+				background: #655;
+				background-image: radial-gradient(tan 30%, transparent 0),
+					radial-gradient(tan 30%, transparent 0);
+				background-size: 30px 30px;
+				background-position: 0 0, 15px 15px;
+			}
+			.checkerboard {
+				width: 300px;
+				height: 300px;
+				background: #eee;
+				background-image: linear-gradient(45deg, #bbb 25%, transparent 0),
+					linear-gradient(45deg, transparent 75%, #bbb 0),
+					linear-gradient(45deg, #bbb 25%, transparent 0),
+					linear-gradient(45deg, transparent 75%, #bbb 0);
+				background-position: 0 0, 30px 30px, 30px 30px, 60px 60px;
+				background-size: 60px 60px;
+			}
+			.checkerboard-svg {
+				width: 300px;
+				height: 300px;
+				background: #eee
+					url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill-opacity="0.25"> <rect x="50" width="50" height="50"></rect><rect y="50" width="50" height="50"></rect></svg>');
+				background-size: 60px 60px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<main>
+			<div class="grid"></div>
+			<p>水平和垂直的条纹叠加创建网格图案</p>
+			<div class="grid2"></div>
+			<p>网格大小可以调整，线条粗细保持固定</p>
+			<div class="blueprint"></div>
+			<p>叠加不同线宽，不同颜色的网格图案实现更逼真的蓝图网格</p>
+			<div class="polka"></div>
+			<p>波点</p>
+			<div class="polka2"></div>
+			<p>交错波点</p>
+			<div class="checkerboard"></div>
+			<p>棋盘</p>
+			<div class="checkerboard-svg"></div>
+			<p>棋盘SVG方案</p>
+		</main>
+	</body>
+</html>
