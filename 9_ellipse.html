@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>自适应椭圆</title>
+		<style>
+			main {
+				width: 100vw;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+			}
+			div {
+				width: 250px;
+				height: 200px;
+        background-color: orange;
+			}
+			p {
+				margin: 30px 0;
+			}
+			.ellipse {
+        border-radius: 50%;
+			}
+			.half-ellipse {
+        border-radius: 50% / 100% 100% 0 0;
+			}
+			.quarter-ellipse {
+        border-radius: 100% 0 0 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<main>
+			<div class="ellipse"></div>
+			<p>椭圆</p>
+			<div class="half-ellipse"></div>
+			<p>半椭圆</p>
+      <div class="quarter-ellipse"></div>
+			<p>四分之一椭圆</p>
+		</main>
+	</body>
+</html>

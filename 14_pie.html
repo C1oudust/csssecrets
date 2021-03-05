@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>简单的饼图</title>
+		<style>
+			main {
+				width: 100vw;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+			}
+			div {
+				width: 200px;
+				height: 200px;
+			}
+			p {
+				margin: 30px 0;
+			}
+			@keyframes spin {
+				to {
+					transform: rotate(0.5turn);
+				}
+			}
+
+			@keyframes bg {
+				50% {
+					background: #655;
+				}
+			}
+			.pie {
+				border-radius: 50%;
+				background-color: yellowgreen;
+				background-image: linear-gradient(to right, transparent 50%, #655 0);
+			}
+
+			.pie::before {
+				content: '';
+				display: block;
+				margin-left: 50%;
+				height: 100%;
+				border-radius: 0 100% 100% 0 / 50%;
+				background-color: inherit;
+				transform-origin: left;
+				transform: rotate(0.1turn);
+				animation: spin 3s linear infinite, bg 6s step-end infinite;
+			}
+			/* circle {
+				fill: yellowgreen;
+				stroke: #655;
+				stroke-width: 100;
+				stroke-dasharray: 0 314;
+				animation: fillup 5s linear infinite;
+			}
+			svg {
+				background-color: yellowgreen;
+				border-radius: 50%;
+				transform: rotate(-90deg);
+			}
+
+			@keyframes fillup {
+				to {
+					stroke-dasharray: 314 314;
+				}
+			} */
+      circle {
+				fill: yellowgreen;
+				stroke: #655;
+				stroke-width: 32;
+				stroke-dasharray: 0 100;
+				animation: fillup 5s linear infinite;
+			}
+			svg {
+        width: 200px;
+        height: 200px;
+				background-color: yellowgreen;
+				border-radius: 50%;
+				transform: rotate(-90deg);
+			}
+
+			@keyframes fillup {
+				to {
+					stroke-dasharray: 100 100;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<main>
+			<div class="pie"></div>
+			<p>使用伪元素</p>
+			<!-- <svg width="200" height="200">
+				<circle r="50" cx="100" cy="100"></circle>
+			</svg> -->
+      <!-- 使用viewBox优化大小自适应 -->
+      <svg viewBox="0 0 32 32">
+				<circle r="16" cx="16" cy="16"></circle>
+			</svg>
+      <p>使用SVG</p>
+		</main>
+	</body>
+</html>
