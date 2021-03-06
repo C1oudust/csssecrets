@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>毛玻璃效果</title>
+		<style>
+			main {
+				width: 100vw;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+			}
+			p {
+				margin: 30px 0;
+			}
+      .glass{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+
+        text-align: center;
+        overflow: hidden;
+        background: url(https://s3.ax1x.com/2021/03/06/6nLVrd.jpg) no-repeat 0 / cover fixed;
+      }
+
+      .glass::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin:auto;
+        width: 500px;
+        height: 500px;
+        background: url(https://s3.ax1x.com/2021/03/06/6nLVrd.jpg) no-repeat 0 / cover fixed;
+        filter: blur(5px);
+       
+      }
+
+      .text{
+        font-size: 40px;
+        margin-top: 350px;
+        z-index: 2;
+        color: white;
+      }
+		</style>
+	</head>
+	<body>
+		<main>
+			<div class="glass">
+      </div>
+      <div class="text">frosted glass</div>
+			<p></p>
+		</main>
+	</body>
+</html>

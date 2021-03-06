@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>不规则投影</title>
+		<style>
+			main {
+				width: 100vw;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+			}
+			div {
+				width: 200px;
+				height: 200px;
+			}
+			p {
+				margin: 30px 0;
+			}
+			.shadow {
+        position: relative;
+				background-color: #eeeeee;
+        border-radius: 10px;
+				filter: drop-shadow(2px 2px 10px rgba(0,0,0,.5));
+			}
+      .shadow::after{
+        content: '';
+        border: 50px solid transparent;
+        border-left-color: #eeeeee;
+        position: absolute;
+        right: -100px;
+        top: 50px;
+      }
+		</style>
+	</head>
+	<body>
+		<main>
+			<div class="shadow"></div>
+			<p>filter投影</p>
+		</main>
+	</body>
+</html>
