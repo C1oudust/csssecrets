@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>环形文字</title>
+		<style>
+			main {
+				width: 100vw;
+				height: 100vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: justify;
+			}
+			div{
+				width: 400px;
+				height: 120px;
+			}
+			p {
+				margin: 30px 0;
+				font-size: 24px;
+			}
+			.circular{
+				width: 30em;
+				height: 30em;
+				margin: 3em auto 0;
+			}
+			.circular svg{
+				overflow: visible;
+				display: block;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<main>
+			<div class="circular">
+				<svg viewBox="0 0 100 100">
+					<defs><path d="M 0,50 a 50,50 0 1,1 0,1 z" id="circle"></path></defs>
+					<text><textPath xlink:href="#circle">
+						circle reasoning works because
+					</textPath></text>
+				</svg>
+			</div>
+		</main>
+	</body>
+</html>

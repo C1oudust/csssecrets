@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>自定义下划线</title>
+		<style>
+			main {
+				width: 100vw;
+				height: 100vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+			}
+
+			p {
+				margin: 30px 0;
+			}
+			.underline-normal{
+				background: linear-gradient(gray,gray) no-repeat;
+				background-size: 100% 1px;
+				background-position: 0 1.15em;
+				text-shadow: 0.05em 0 white,-0.05em 0 white;
+			}
+			.underline-dash{
+				background: linear-gradient(90deg,gray 66%,transparent 0) repeat-x;
+				background-size: 0.5em 1px;
+				background-position: 0 1.2em;
+				/* text-shadow: 0.05em 0 white,-0.05em 0 white; */
+			}
+			.underline-wavy{
+				background: linear-gradient(-45deg,transparent 40%,red 0,red 60%,transparent 0) 0 1em,
+				linear-gradient(45deg,transparent 40%,red 0,red 60%,transparent 0) 0.1em 1em;
+				background-repeat: repeat-x;
+				background-size: 0.2em 0.1em;
+				text-shadow: 0.05em 0 white,-0.05em 0 white;
+			}
+			/* 目前只有Safari支持 */
+			.underline-wavy-new{
+				text-decoration-style: wavy;
+				text-decoration-color: red;
+				text-decoration-skip:  edges;
+				text-underline-position: 0.2em;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<div class="underline-normal">"The only way to get rid of a temptation is to yield to it."</div>
+			<div class="underline-dash">"The only way to get rid of a temptation is to yield to it."</div>
+			<div class="underline-wavy">"The only way to get rid of a temptation is to yield to it."</div>
+			<div class="underline-wavy-new">"The only way to get rid of a temptation is to yield to it."</div>
+		</main>
+	</body>
+</html>
