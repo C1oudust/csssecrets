@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>开关式按钮</title>
+		<style>
+			main {
+				width: 100vw;
+				height: 100vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: justify;
+			}
+			div {
+				width: 400px;
+				height: 120px;
+			}
+			p {
+				margin: 30px 0;
+				font-size: 24px;
+			}
+			label {
+				user-select: none;
+			}
+			input[type='checkbox'] + label {
+				content: '\a0'; /*不换行空格*/
+				display: inline-block;
+				padding: 0.3em 0.5em;
+				background: #ccc;
+				background-image: linear-gradient(#ddd, #bbb);
+				border: 1px solid rgba(0, 0, 0, 0.2);
+				border-radius: 0.3em;
+				box-shadow: 0 1px white inset;
+				text-align: center;
+				text-shadow: 0 1px 1px white;
+			}
+			input[type='checkbox'] {
+				position: absolute;
+				clip: rect(0, 0, 0, 0);
+			}
+			input[type='checkbox']:checked + label,
+			input[type='checkbox']:checked + label {
+				box-shadow: 0.05em 0.1em 0.2em rgba(0, 0, 0, 0.6) inset;
+				border-color: rgba(0, 0, 0, 0.3);
+				background: #bbb;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<input type="checkbox" name="" id="awesome" />
+			<label for="awesome">Awesome!</label>
+		</main>
+	</body>
+</html>

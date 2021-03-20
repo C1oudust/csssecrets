@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>通过模糊弱化背景</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			main {
+				width: 100vw;
+				height: 100vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: justify;
+			}
+			div {
+				width: 400px;
+				height: 120px;
+			}
+			p {
+				margin: 30px 0;
+				font-size: 24px;
+			}
+			ul {
+				overflow: auto;
+				width: 10em;
+				height: 8em;
+				padding: 0.3em 0.5em;
+				border: 1px solid silver;
+				background: linear-gradient(white, hsla(0, 0%, 100%, 0)),
+					radial-gradient(at top, rgba(0, 0, 0, 0.2), transparent 70%),
+					linear-gradient(to top, white 15px, hsla(0, 0%, 100%,0)) bottom,
+					radial-gradient(at bottom, rgba(0, 0, 0, 0.2), transparent 70%) bottom;
+				background-repeat: no-repeat;
+				background-attachment: local, scroll,local, scroll;
+				background-size: 100% 50px, 100% 15px,100% 50px,100% 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<ul>
+				<li>Ada Catlace</li>
+				<li>Alan Purring</li>
+				<li>Schrödingcat</li>
+				<li>Tim Purrners-Lee</li>
+				<li>Webkitty</li>
+				<li>Json</li>
+				<li>Void</li>
+				<li>Neko</li>
+				<li>NaN</li>
+				<li>Cat5</li>
+				<li>Vector</li>
+        <li>Ada Catlace</li>
+				<li>Alan Purring</li>
+				<li>Schrödingcat</li>
+				<li>Tim Purrners-Lee</li>
+			</ul>
+		</main>
+	</body>
+</html>

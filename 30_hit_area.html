@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>选用合适的鼠标光标</title>
+		<style>
+			main {
+				width: 100vw;
+				height: 100vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: justify;
+			}
+			div{
+				width: 400px;
+				height: 120px;
+			}
+			p {
+				margin: 30px 0;
+				font-size: 24px;
+			}
+      .plus{
+        width: 100px;
+        height: 100px;
+        background: #58a;
+        border-radius: 50%;
+        color: white;
+        text-align: center;
+        line-height: 95px;
+        font-size: 50px;
+        user-select: none;
+        
+        /* border: 50px solid transparent;
+        background-clip: padding-box; */
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3) inset;
+
+        position: relative;
+      }
+
+      .plus::before{
+        content: '';
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        left: -50px;
+        bottom: -50px;
+      }
+      .plus:hover,.plus:active{
+        cursor: pointer;
+      }
+		</style>
+	</head>
+	<body>
+		<main>
+      <div class="plus">+</div>
+		</main>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>选用合适的鼠标光标</title>
+		<style>
+			main {
+				width: 100vw;
+				height: 100vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: justify;
+			}
+			div{
+				width: 400px;
+				height: 120px;
+			}
+			p {
+				margin: 30px 0;
+				font-size: 24px;
+			}
+      :disabled, [disabled],[aria-disabled="true"]{
+        cursor: not-allowed;
+      }
+
+      .hidden-cursor{
+        cursor: none;
+      }
+		</style>
+	</head>
+	<body>
+		<main>
+				<button disabled>禁止点击</button>
+        <button class="hidden-cursor">隐藏鼠标</button>
+		</main>
+	</body>
+</html>

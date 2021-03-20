@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>交互式的图片对比控件</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			main {
+				width: 100vw;
+				height: 100vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: center;
+				text-align: justify;
+			}
+			p {
+				margin: 30px 0;
+				font-size: 24px;
+			}
+			.image-slider {
+				position: relative;
+				display: inline-block;
+			}
+
+			.image-slider > div {
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				width: 50%;
+				overflow: hidden;
+				resize: horizontal;
+				max-width: 100%;
+			}
+
+			.image-slider > div::before {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				width: 20px;
+				height: 20px;
+				background: linear-gradient(-45deg, white 50%, transparent 0);
+				background-clip: content-box;
+				cursor: ew-resize;
+			}
+			img {
+				display: block;
+				user-select: none;
+			}
+
+			.image-slider2 {
+				position: relative;
+				display: inline-block;
+			}
+
+			.image-slider2 > div {
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				width: 50%;
+				overflow: hidden;
+				resize: horizontal;
+				max-width: 100%;
+			}
+			.warpper {
+				height: 750px;
+			}
+
+			.image-slider2 input {
+				position: absolute;
+				left: 0;
+				bottom: 10px;
+				/* width: 100%; */
+				margin: 0;
+				filter: contrast(0.5);
+				mix-blend-mode: luminosity;
+				width: 50%;
+				transform: scale(2);
+				transform-origin: left bottom;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<div class="image-slider">
+				<div>
+					<img
+						src="https://images.pexels.com/photos/4992438/pexels-photo-4992438.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+						alt="Before"
+						crossorigin="*"
+					/>
+				</div>
+				<img
+					src="https://images.pexels.com/photos/5506919/pexels-photo-5506919.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+					alt="After"
+					crossorigin="*"
+				/>
+			</div>
+
+			<div class="image-slider2">
+				<div class="warpper">
+					<img
+						src="https://images.pexels.com/photos/4992438/pexels-photo-4992438.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+						alt="Before"
+						crossorigin="*"
+					/>
+				</div>
+				<img
+					src="https://images.pexels.com/photos/5506919/pexels-photo-5506919.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+					alt="After"
+					crossorigin="*"
+				/>
+			</div>
+		</main>
+	</body>
+	<script>
+		document.querySelectorAll('.image-slider2').forEach(function (slider) {
+			var d = document.querySelector('.warpper');
+			var range = document.createElement('input');
+			range.type = 'range';
+			range.style.marginTop = '20px';
+			range.oninput = function () {
+				d.style.width = this.value + '%';
+			};
+			slider.append(range);
+		});
+	</script>
+</html>
