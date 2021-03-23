@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>自适应内部元素</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			main {
+				width: 100vw;
+				height: 100vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: center;
+				text-align: justify;
+			}
+			p {
+				margin: 30px 0;
+			}
+      figure{
+        border: 1px solid #d5d5d5;
+        max-width: 500px;
+        max-width: min-content;
+        margin: auto;
+      }
+      figure > img{
+        max-width: inherit;
+      }
+		</style>
+	</head>
+	<body>
+		<main>
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. </p>
+      <figure>
+        <img src="https://images.pexels.com/photos/1335971/pexels-photo-1335971.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+        <figcaption>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est.
+        </figcaption>
+      </figure>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est.</p>
+		</main>
+	</body>
+
+</html>

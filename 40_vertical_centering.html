@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>垂直居中</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				background: #fb3;
+			}
+			main {
+				box-sizing: border-box;
+				background: #655;
+				color: white;
+				text-align: center;
+				padding: 20px;
+			}
+
+			.center-abs {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			.center-vh {
+				width: 18em;
+				margin: 50vh auto 0;
+				transform: translateY(-50%);
+			}
+			.center-flex {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 100vh;
+			}
+
+		</style>
+	</head>
+	<body class="center-flex">
+		<!-- <main class="center-abs">
+			<h3>Am I centered yet?</h3>
+			<p>Center me, please!</p>
+		</main> -->
+		<!-- <main class="center-vh">
+			<h3>Am I centered yet?</h3>
+			<p>Center me, please!</p>
+		</main> -->
+		<main >
+			<h3>Am I centered yet?</h3>
+			<p>Center me, please!</p>
+		</main>
+	</body>
+</html>
