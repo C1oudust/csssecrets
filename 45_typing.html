@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>打字动画</title>
+		<style>
+			.typing{
+				width: 15ch;
+				overflow: hidden;
+				white-space: nowrap;
+				border-right: 0.05em solid;
+				animation: typing 6s steps(15),caret 1s steps(1) infinite;
+				font-family:monospace; /* 必须使用等宽字体 */
+			}
+
+			@keyframes typing {
+				from {
+					width: 0;
+				}
+			}
+			@keyframes caret {
+				50%{border-color: transparent;}
+			}
+		</style>
+	</head>
+	<body>
+		<!-- <div class="typing">CSS is awesome!</div> -->
+		<div class="typing">打字机测试</div>
+	</body>
+	<script>
+		var text = document.querySelector('.typing');
+		var len = text.textContent.length,s = text.style;
+		// 中文需要乘2
+		s.width = len * 2 + 'ch';
+		s.animationTimingFunction = 'steps(' + len +'),steps(1)';
+	</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>沿环形路径平移的动画</title>
+		<style>
+			.avatar {
+				width: 50px;
+				margin: 0 auto;
+				border-radius: 50%;
+				overflow: hidden;
+			}
+
+			.avatar > img {
+				display: block;
+				width: inherit;
+			}
+
+			.path {
+				width: 300px;
+				height: 300px;
+				padding: 20px;
+				border-radius: 50%;
+				background: #fb3;
+			}
+			@keyframes spin {
+				to {
+					transform: rotate(1turn);
+				}
+			}
+
+			.avatar {
+				animation: spin 3s infinite linear;
+				transform-origin: 50% 150px; /* 150px 路径的半径*/
+			}
+			.avatar > img {
+			
+				animation: inherit;
+				animation-direction: reverse;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="path">
+			<div class="avatar">
+				<img
+					src="https://avatars.githubusercontent.com/u/29059054?s=460&u=a137eba6c17944519f97e56890c11d93eb5196db&v=4"
+				/>
+			</div>
+		</div>
+	</body>
+</html>

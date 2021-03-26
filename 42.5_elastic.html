@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>弹性过渡</title>
+		<style>
+			body {
+				padding: 1.5em;
+				font: 200%/1.6 Baskerville;
+			}
+
+			input {
+				display: block;
+				padding: 0 0.4em;
+				font: inherit;
+			}
+
+			.callout {
+				position: absolute;
+				max-width: 14em;
+				padding: 0.6em 0.8em;
+				border-radius: 0.3em;
+				margin: 0.3em 0 0 -0.2em;
+				background: #fed;
+				border: 1px solid rgba(0, 0, 0, 0.3);
+				box-shadow: 0.05em 0.2em 0.6em rgba(0, 0, 0, 0.2);
+				font-size: 75%;
+			}
+
+			.callout:before {
+				content: '';
+				position: absolute;
+				top: -0.4em;
+				left: 1em;
+				padding: 0.35em;
+				background: inherit;
+				border: inherit;
+				border-right: 0;
+				border-bottom: 0;
+				transform: rotate(45deg);
+			}
+			input:not(:focus) + .callout:not(:hover) {
+				transform: scale(0);
+			}
+
+			input:focus + .callout{
+				animation: elastic-grow 0.5s;
+			}
+
+			@keyframes elastic-grow {
+				from{
+					transform: scale(0);
+				}
+				70%{
+					transform: scale(1.1);
+					animation-timing-function: cubic-bezier(0.1,0.25,1,0.25);
+				}
+			}
+			.callout {
+				/* transition: 0.5s transform; */
+				transform-origin: 1.4em, -0.4em;
+				user-select: none;
+				pointer-events: none;
+			}
+		</style>
+	</head>
+	<body>
+		<label>
+			Your name: <input id="username" />
+			<span class="callout"
+				>Only letters,numbers,unserscores(_) and hyphens(-) allowed!</span
+			>
+		</label>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>闪烁效果</title>
+		<style>
+
+			p {
+				padding: 1em;
+				background: gold;
+			}
+			.blink-smooth {
+				animation:0.5s blink-smooth 6 alternate;
+			}
+
+			.blink {
+				animation:1s blink 3 steps(1); /* 或者使用step-end */
+			}
+			@keyframes blink-smooth {
+				to {
+					color: transparent;
+				}
+			}
+			@keyframes blink {
+				50% {
+					color: transparent;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<p class="blink-smooth">平滑的闪烁</p>
+		<p class="blink">普通闪烁</p>
+	</body>
+</html>

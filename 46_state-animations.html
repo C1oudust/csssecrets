@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>打字动画</title>
+		<style>
+			@keyframes panoramic {
+				to {
+					background-position: 0 100%;
+				}
+			}
+			.img {
+				width: 731px;
+				height: 731px;
+				background: url(https://images.pexels.com/photos/6569318/pexels-photo-6569318.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+					no-repeat;
+				background-size: 100% auto;
+				animation: panoramic 10s linear infinite alternate;
+				animation-play-state: paused;
+			}
+			.img:hover,
+			.img:focus {
+				animation-play-state: running;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="img"></div>
+	</body>
+</html>
